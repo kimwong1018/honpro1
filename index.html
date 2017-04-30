@@ -11,14 +11,17 @@
 </head>
 <body>
        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 1000px;height:600px;"></div>
+         <!--chart2-->
+                <div id="main2" style="width: 1000px;height:600px;"></div>
     <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-              $(function() {
-            var myChart = echarts.init(document.getElementById('main'));
-app.title = '坐标轴刻度与标签对齐';
+        $(function() {
+            var myChart2 = echarts.init(document.getElementById('main2'));
 
+  
 option = {
+      title: {
+                    text: '香港近20年的綜合消費物價指數',
+                },
     color: ['#3398DB'],
     tooltip : {
         trigger: 'axis',
@@ -35,7 +38,26 @@ option = {
     xAxis : [
         {
             type : 'category',
-            data : ['60-64', '65-69', '70-74', '75-79', '80-84', '>85'],
+            data : [ '1997',
+            '1998',
+            '1999',
+            '2000',
+            '2001',
+            '2002',
+            '2003',
+            '2004',
+            '2005',
+            '2006',
+            '2007',
+            '2008',
+            '2009',
+            '2010',
+            '2011',
+            '2012',
+            '2013',
+            '2014',
+            '2015',
+            '2016'],
             axisTick: {
                 alignWithLabel: true
             }
@@ -48,16 +70,33 @@ option = {
     ],
     series : [
         {
-            name:'患病比率',
+            name:'Percentage',
             type:'bar',
             barWidth: '60%',
-            data:[1.2, 2.5, 3.5, 9.9, 19.0, 32.1]
+            data:[    5.8,
+            2.8,
+            -4.0,
+            -3.8,
+            -1.6,
+            -3.0,
+            -2.6,
+            -0.4,
+            1.0,
+            2.0,
+            2.0,
+            4.3,
+            0.5,
+            2.4,
+            5.3,
+            4.1, 
+            4.3,
+            4.4,
+            3.0,
+            2.4]
         }
     ]
 };
-
-
- // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        </script>
+            myChart2.setOption(option);
+        });
+    </script>
         </body>
